@@ -1,0 +1,22 @@
+{
+  "name": "win",
+  "version": "1.0.0",
+  "description": "hidden treasures of the internet",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "win",
+    "money",
+    "discover",
+    "hidden",
+    "treasure"
+  ],
+  "author": "Liam McCabe",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}
