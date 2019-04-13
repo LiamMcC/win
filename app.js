@@ -15,6 +15,49 @@ app.use(express.static("model"));
 app.use(express.static("controller"));
 app.use(express.static("script"));
 // *********** Never write anything above the express call line ****************
+var bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({extended:true}));
+const nodemailer = require("nodemailer");
+
+
+app.post('/sendmail', function(req,res){
+const output = "<ul><li>Name:" + req.body.Name +" </li><li>Email: something</li><li>Subject: subject</li><li>Message: message</li></ul>";
+
+let transporter = nodemailer.createTransport({
+  host: '*********',
+  port: 465,
+  secure: true, // true for 465, false for other ports
+  auth: {
+    user: '********', // your domain email address
+    pass: '*********' // your password
+  },
+  tls:{
+    rejectUnauthorized: false
+  }
+});
+
+let mailOptions = {
+from: 'sales@parkingsensors.ie',
+subject: 'Great',
+to: 'me@liammccabe.ie',
+html: output 
+}
+
+// Smtp Settings for outputing gmail for nodemailer
+// send mail with defined transport object
+transporter.sendMail(mailOptions, function(error, info){
+if(error){
+  console.log(error);
+  return;
+} else {
+  console.log(info);
+}
+res.render('index', {message: 'Email has been sent'});
+});
+
+})
+
+
 
 app.get('/', function(req,res){
 
