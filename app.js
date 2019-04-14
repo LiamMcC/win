@@ -33,8 +33,8 @@ let transporter = nodemailer.createTransport({
   port: 465,
   secure: true, // true for 465, false for other ports
   auth: {
-    user: '******, // your domain email address
-    pass: '*******' // your password
+    user: 'parkingsensors.ie', // your domain email address
+    pass: 'Spsports15*' // your password
   },
   tls:{
     rejectUnauthorized: false
@@ -42,9 +42,9 @@ let transporter = nodemailer.createTransport({
 });
 
 let mailOptions = {
-from: '******',
+from: 'sales@parkingsensors.ie',
 subject: 'Great',
-to: '******',
+to: 'me@liammccabe.ie',
 html: output 
 }
 
