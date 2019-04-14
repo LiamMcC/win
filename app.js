@@ -29,12 +29,12 @@ app.post('/sendmail', function(req,res){
 const output = "<div style='width:100%'><p style='background-color: tomato; color: white; padding: 10px;'>Name: " + req.body.Name +" </p></div><div style='width:100%'><p style='background-color: tomato; color: white; padding: 10px;'>Encrypted Email: " + req.body.Email +" </p></div><div style='width:100%'><p style='background-color: tomato; color: white; padding: 10px;'>Number: " + req.body.PhoneNumber +" </p></div><div style='width:100%'><p style='background-color: tomato; color: white; padding: 10px;'>Message: " + req.body.Message +" </p></div>";
 
 let transporter = nodemailer.createTransport({
-  host: 'smtp.reg365.net',
+  host: '********',
   port: 465,
   secure: true, // true for 465, false for other ports
   auth: {
-    user: 'parkingsensors.ie', // your domain email address
-    pass: 'Spsports15*' // your password
+    user: '********', // your domain email address
+    pass: '*********' // your password
   },
   tls:{
     rejectUnauthorized: false
@@ -42,9 +42,9 @@ let transporter = nodemailer.createTransport({
 });
 
 let mailOptions = {
-from: 'sales@parkingsensors.ie',
+from: '********',
 subject: 'Great',
-to: 'me@liammccabe.ie',
+to: '********',
 html: output 
 }
 
